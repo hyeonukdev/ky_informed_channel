@@ -33,18 +33,14 @@ for i in range(1,3):
         for th in ths:
             coin_list = []
             coin_row = th.text
-            coin_row = coin_row[8:-1]
-            # print(coin_row)
-            # if coin_row[5] == 0:
-            #     coin_row_month = coin_row[6]
-            # else:
-            #     coin_row_month = coin_row[5:7]
-            # if coin_row[8]:
-            #     coin_row_date = coin_row[9]
-            # else:
-            #     coin_row_date = coin_row[8:]
-
-            coin_list.append(coin_row.replace('.','월'))
+            coin_row = coin_row[8:]
+            coin_row = coin_row.replace('.','월')
+            coin_row = coin_row.replace(')','일')
+            # if coin_row[0] == '0':
+            #     coin_row = coin_row[1:]
+            # if coin_row[-3] == '0':
+            #     coin_row = coin_row[:-3]+coin_row[-2:]
+            coin_list.append(coin_row)
             menu_list[0].append(coin_list)
 
     # 메뉴 정보
