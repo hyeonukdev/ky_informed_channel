@@ -35,7 +35,7 @@ for i in range(1,3):
             coin_list = []
             coin_row = th.text
             coin_row = coin_row[8:]
-            coin_row = coin_row.replace('.','월')
+            coin_row = coin_row.replace('.','월 ')
             coin_row = coin_row.replace(')','일')
             if i != 0 and i != 6:
                 if coin_row[0] == '0':
