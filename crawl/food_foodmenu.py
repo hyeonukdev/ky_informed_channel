@@ -30,16 +30,19 @@ for i in range(1,3):
     thead_tr = thead.find_elements_by_tag_name("tr")
     for tr in thead_tr:
         ths = tr.find_elements_by_tag_name('th')
+        i = 0
         for th in ths:
             coin_list = []
             coin_row = th.text
             coin_row = coin_row[8:]
             coin_row = coin_row.replace('.','월')
             coin_row = coin_row.replace(')','일')
-            # if coin_row[0] == '0':
-            #     coin_row = coin_row[1:]
-            # if coin_row[-3] == '0':
-            #     coin_row = coin_row[:-3]+coin_row[-2:]
+            if i != 0 and i != 6:
+                if coin_row[0] == '0':
+                    coin_row = coin_row[1:]
+                if coin_row[-3] == '0':
+                    coin_row = coin_row[:-3]+coin_row[-2:]
+            i = i+1
             coin_list.append(coin_row)
             menu_list[0].append(coin_list)
 
