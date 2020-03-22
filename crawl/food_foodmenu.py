@@ -69,7 +69,7 @@ for i in range(1,3):
     file_data[campus] = data
 
 with open('food_foodmenu.json', 'w', encoding='utf-8') as make_file:
-    json.dump(file_data, make_file, ensure_ascii=False)
+    json.dump(file_data, make_file, indent=3, ensure_ascii=False)
 
 driver.close()
 driver.quit()
