@@ -33,7 +33,7 @@ for i in range(1,3):
         for th in ths:
             coin_list = []
             coin_row = th.text
-            coin_list.append(coin_row[2:])
+            coin_list.append(coin_row[3:-1])
             menu_list[0].append(coin_list)
 
     # 메뉴 정보
@@ -58,7 +58,7 @@ for i in range(1,3):
         data[''.join(menu_list[0][col])] = {''.join(menu_list[1][0]):menu_list[1][col], ''.join(menu_list[2][0]):menu_list[2][col], ''.join(menu_list[3][0]):menu_list[3][col]}
     file_data[campus] = data
 
-with open('..\json\food_foodmenu.json', 'w', encoding='utf-8') as make_file:
+with open('food_foodmenu.json', 'w', encoding='utf-8') as make_file:
     json.dump(file_data, make_file, ensure_ascii=False)
 
 driver.close()
