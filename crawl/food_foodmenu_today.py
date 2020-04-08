@@ -19,4 +19,4 @@ file_data["죽헌정보관"] = today_campus1_menu
 file_data["건양회관"] = today_campus2_menu
 
 with open('food_foodmenu_today.json', 'w', encoding='utf-8') as make_file:
-    json.dump(file_data, make_file, indent=3 ,ensure_ascii=False)
+    json.dump(file_data, make_file, indent=3, ensure_ascii=False)
